@@ -1,5 +1,5 @@
 {
-  "name": "webpack-config",
+  "name": "goit-js-hw-12-countries",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NikitaMelnychencko/webpack-config.git"
+    "url": "git+https://github.com/NikitaMelnychencko/goit-js-hw-12-countries.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Nikita Melnychencko",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NikitaMelnychencko/webpack-config/issues"
+    "url": "https://github.com/NikitaMelnychencko/goit-js-hw-12-countries/issues"
   },
-  "homepage": "https://github.com/NikitaMelnychencko/webpack-config#readme",
+  "homepage": "https://github.com/NikitaMelnychencko/goit-js-hw-12-countries#readme",
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.4",
