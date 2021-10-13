@@ -42,6 +42,7 @@ function renderCountry(country) {
       modules: new Map([...defaultModules, [PNotifyDesktop, {}]]),
     });
   }
+  return
 }
 function targetValue(e) {
   if (e.target.nodeName !== 'LI') {
