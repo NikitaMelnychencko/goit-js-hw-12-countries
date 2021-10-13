@@ -9,3 +9,12 @@ input{
 .render__box--flex{
   display: flex;
 }
+.render__item + .render__item{
+margin-left: 200px;
+}
+
+.render__flag{
+  width: 280px;
+  height: 280px;
+  background-color: #000000;
+}

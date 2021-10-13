@@ -1,6 +1,6 @@
 {{#each this}}
   <div class='render__box--flex'>
-    <div>
+    <div class='render__item'>
       <h1>{{name}}</h1>
       <p>Capital: <span>{{capital}}</span></p>
       <p>Population: <span>{{population}}</span></p>
@@ -13,8 +13,8 @@
         </ul>
       </div>
     </div>
-    <div>
-      <img src='{{flag}}' alt='flag' width='512px' height='512px' />
+    <div class='render__item'>
+      <img class='render__flag' src='{{flag}}' alt='flag' />
     </div>
   </div>
 
