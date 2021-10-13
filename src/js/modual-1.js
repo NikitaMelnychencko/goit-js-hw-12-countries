@@ -13,7 +13,6 @@ const refsRender = document.querySelector('.render');
 refsInput.addEventListener(
   'input',
   debounce(e => {
-    e.preventDefault();
     if (e.target.value.length > 0) {
       fetchCountries(e.target.value)
         .then(renderCountry)
@@ -33,7 +32,8 @@ function renderCountry(country) {
     refsRender.innerHTML = markupCard;
   } else if (country.length > 10) {
     const myNotice = notice({
-      text: 'Too many matches found. Please enter a mare specific query!',
+      title:'Too many matches found.',
+      text: ' Please enter a mare specific query!',
       modules: new Map([...defaultModules, [PNotifyDesktop, {}]]),
     });
   }
@@ -47,7 +47,8 @@ function targetValue(e) {
 }
 function onFetchError(error) {
   const myError = notice({
-    text: 'Error 404.',
+    title:'Error',
+    text: `${error}`,
     modules: new Map([...defaultModules, [PNotifyDesktop, {}]]),
   });
 }

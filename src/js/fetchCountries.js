@@ -6,14 +6,14 @@ import '@pnotify/core/dist/BrightTheme.css';
 export default function fetchCountries(searchQuery) {
   return fetch(`https://restcountries.com/v2/name/${searchQuery}`)
     .then(response => {
-      if (response.status !== 404) {
-        return response.json();
+      return response.json();
+
+    })
+    .then(data => {
+      if (data.status === 404) {
+        throw new Error(data.status)
+      } else {
+        return data
       }
     })
-    .catch(error => {
-      const myError = notice({
-        text: 'Error 404.',
-        modules: new Map([...defaultModules, [PNotifyDesktop, {}]]),
-      });
-    });
 }
