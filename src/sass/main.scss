@@ -1,4 +1,11 @@
+input{
+  width: 300px;
+  height: 40px;
+}
 .country-list__item{
   cursor: pointer;
 }
 
+.render__box--flex{
+  display: flex;
+}

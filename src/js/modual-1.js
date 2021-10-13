@@ -17,12 +17,7 @@ refsInput.addEventListener(
     if (e.target.value.length > 0) {
       fetchCountries(e.target.value)
         .then(renderCountry)
-        .catch(error => {
-          const myError = notice({
-            text: 'Error 404.',
-            modules: new Map([...defaultModules, [PNotifyDesktop, {}]]),
-          });
-        });
+        .catch(onFetchError);
     }
   }, 500),
 );
@@ -42,7 +37,6 @@ function renderCountry(country) {
       modules: new Map([...defaultModules, [PNotifyDesktop, {}]]),
     });
   }
-  return
 }
 function targetValue(e) {
   if (e.target.nodeName !== 'LI') {
@@ -50,4 +44,10 @@ function targetValue(e) {
   }
   refsInput.value = e.target.textContent;
   fetchCountries(refsInput.value).then(renderCountry);
+}
+function onFetchError(error) {
+  const myError = notice({
+    text: 'Error 404.',
+    modules: new Map([...defaultModules, [PNotifyDesktop, {}]]),
+  });
 }
