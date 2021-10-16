@@ -1,0 +1,37 @@
+input {
+  margin-top: 50px;
+  width: 100%;
+  height: 40px;
+}
+.render{
+  @media screen and (min-width: $mobile-general) {
+    padding: 50px 50px;
+  }
+  @media screen and (min-width: $mobile-only) {
+    padding: 50px 120px;
+  }
+  @media screen and (min-width: $desktop-up) {
+    padding: 50px 300px;
+  }
+}
+.country-list__item {
+  cursor: pointer;
+}
+
+.render__box--flex {
+  display: flex;
+}
+
+.render__item+.render__item {
+  margin-left: auto;
+}
+
+.render__flag {
+  width: 125px;
+  height:125px;
+  @media screen and (min-width: $mobile-only) {
+    width: 280px;
+    height: 280px;
+  }
+  
+}

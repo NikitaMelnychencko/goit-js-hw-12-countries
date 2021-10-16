@@ -26,7 +26,7 @@ module.exports = {
         type: 'asset/inline',
       },
       {
-        test: /\.(jpe?g|png|gif|svg|eot|ttf|woff2?)$/i,
+        test: /\.(jpe?g|gif|svg|eot|ttf|woff2?)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'images/[name][ext]',
@@ -35,6 +35,19 @@ module.exports = {
       {
         test: /\.hbs$/,
         use: 'handlebars-loader',
+      },
+      {
+        test: /\.png$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: false,
+              mimetype: 'image/png',
+              name: 'images/[name].[ext]',
+            },
+          },
+        ],
       },
     ],
   },

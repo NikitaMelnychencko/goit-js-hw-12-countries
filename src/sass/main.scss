@@ -1,19 +1,4 @@
-input{
-  width: 300px;
-  height: 40px;
-}
-.country-list__item{
-  cursor: pointer;
-}
-
-.render__box--flex{
-  display: flex;
-}
-.render__item + .render__item{
-margin-left: 200px;
-}
-
-.render__flag{
-  width: 280px;
-  height: 280px;
-}
+@import './utils/breakpoints';
+@import './base/globalClass';
+@import './base/reset';
+@import './layout/country';

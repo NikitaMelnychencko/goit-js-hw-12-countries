@@ -23,7 +23,7 @@ module.exports = merge(commonConfig, {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: { importLoaders: 1 }
+            options: { importLoaders: 1, url: false }
           },
           'sass-loader'
         ],
