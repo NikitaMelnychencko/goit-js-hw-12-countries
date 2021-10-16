@@ -1,7 +1,7 @@
 import fetchCountries from './fetchCountries';
 import listCountry from '../layouts/list-country.hbs';
 import cardCountry from '../layouts/card-country.hbs';
-import { notice, defaultModules } from '@pnotify/core';
+import {alert, error, notice, defaultModules } from '@pnotify/core';
 import * as PNotifyDesktop from '@pnotify/desktop';
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
@@ -34,7 +34,6 @@ function renderCountry(country) {
     const myNotice = notice({
       title:'Too many matches found.',
       text: ' Please enter a mare specific query!',
-      modules: new Map([...defaultModules, [PNotifyDesktop, {}]]),
     });
   }
 }
@@ -45,10 +44,9 @@ function targetValue(e) {
   refsInput.value = e.target.textContent;
   fetchCountries(refsInput.value).then(renderCountry);
 }
-function onFetchError(error) {
-  const myError = notice({
+function onFetchError(mistake) {
+  const myError = error({
     title:'Error',
-    text: `${error}`,
-    modules: new Map([...defaultModules, [PNotifyDesktop, {}]]),
+    text: `${mistake}`,
   });
 }
